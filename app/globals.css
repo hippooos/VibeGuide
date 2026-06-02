@@ -66,3 +66,116 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* =============================================
+   VibeGuide Animations
+   ============================================= */
+
+/* Morphing color blob */
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25%       { transform: translate(12px, -18px) scale(1.04); border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50%       { transform: translate(-10px, 12px) scale(0.97); border-radius: 50% 40% 60% 50% / 30% 60% 40% 70%; }
+  75%       { transform: translate(6px, 6px) scale(1.02);  border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%; }
+}
+.animate-blob { animation: blob 10s ease-in-out infinite; }
+.animation-delay-2000 { animation-delay: -3s; }
+.animation-delay-4000 { animation-delay: -6.5s; }
+.animation-delay-6000 { animation-delay: -9s; }
+
+/* Gentle float for hero illustration */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-14px) rotate(0.4deg); }
+}
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+/* Shimmer sweep for badge */
+@keyframes shimmer-sweep {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(220%); }
+}
+.shimmer-badge { position: relative; overflow: hidden; }
+.shimmer-badge::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 45%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+  animation: shimmer-sweep 2.8s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+/* Glow pulse for primary CTA button */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 18px rgba(99,102,241,0.4), 0 0 36px rgba(99,102,241,0.15); }
+  50%       { box-shadow: 0 0 28px rgba(99,102,241,0.65), 0 0 56px rgba(99,102,241,0.25), 0 0 80px rgba(99,102,241,0.08); }
+}
+.glow-btn { animation: glow-pulse 2.4s ease-in-out infinite; border-radius: 9999px; display: inline-block; }
+
+/* Zap icon pulse */
+@keyframes zap-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.75; transform: scale(1.15); }
+}
+.zap-pulse { animation: zap-pulse 2s ease-in-out infinite; }
+
+/* Feature card hover lift + glow */
+.feature-card {
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -8px rgba(99,102,241,0.18), 0 8px 16px -4px rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.45) !important;
+}
+.feature-icon-wrap {
+  transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), background-color 0.3s ease;
+}
+.feature-card:hover .feature-icon-wrap {
+  transform: scale(1.2) rotate(10deg);
+  background-color: rgba(99,102,241,0.18) !important;
+}
+
+/* Step card hover */
+.step-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Pricing card hover */
+.pricing-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px -8px rgba(99,102,241,0.22);
+}
+
+/* Animated gradient for CTA background */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background: linear-gradient(135deg, #ede9fe, #dbeafe, #fce7f3, #d1fae5, #ede9fe);
+  background-size: 300% 300%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* FAQ item hover */
+.faq-item { transition: box-shadow 0.2s ease; }
+.faq-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+/* Stat number entrance */
+@keyframes stat-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stat-item { animation: stat-in 0.6s ease both; }
+.stat-item:nth-child(1) { animation-delay: 0.1s; }
+.stat-item:nth-child(2) { animation-delay: 0.25s; }
+.stat-item:nth-child(3) { animation-delay: 0.4s; }
