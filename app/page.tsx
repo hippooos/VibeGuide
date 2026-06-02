@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { HomeCTAButton } from "@/components/home-cta-button";
+import { HeroIllustration } from "@/components/illustrations/hero-illustration";
+import {
+  StepIllustrationDescribe,
+  StepIllustrationQA,
+  StepIllustrationDocs,
+} from "@/components/illustrations/step-illustrations";
 import {
   Zap,
   FileText,
@@ -38,25 +44,32 @@ export default function HomePage() {
       </nav>
 
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-5 pt-24 pb-20 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm text-primary font-medium mb-6">
-          <Zap className="h-3.5 w-3.5" />
-          AI 驱动的开发文档生成
-        </div>
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-          把想法变成
-          <span className="text-primary"> 专业文档</span>
-          <br />只需三步
-        </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-          VibeGuide 帮助编程新手通过 AI 快速生成完整的项目开发文档，
-          从用户旅程地图到数据库设计，10 分钟内一键搞定。
-        </p>
-        <div className="flex items-center justify-center gap-4">
-          <HomeCTAButton />
-          <Button asChild variant="outline" size="lg" className="text-base px-8">
-            <Link href="/pricing">查看定价</Link>
-          </Button>
+      <section className="max-w-6xl mx-auto px-5 pt-20 pb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm text-primary font-medium mb-6">
+              <Zap className="h-3.5 w-3.5" />
+              AI 驱动的开发文档生成
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+              把想法变成
+              <span className="text-primary"> 专业文档</span>
+              <br />只需三步
+            </h1>
+            <p className="text-xl text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0">
+              VibeGuide 帮助编程新手通过 AI 快速生成完整的项目开发文档，
+              从用户旅程地图到数据库设计，10 分钟内一键搞定。
+            </p>
+            <div className="flex items-center justify-center lg:justify-start gap-4">
+              <HomeCTAButton />
+              <Button asChild variant="outline" size="lg" className="text-base px-8">
+                <Link href="/pricing">查看定价</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="hidden lg:flex items-center justify-center">
+            <HeroIllustration />
+          </div>
         </div>
       </section>
 
@@ -134,35 +147,24 @@ export default function HomePage() {
             <p className="text-muted-foreground">简单清晰的流程，专为编程新手设计</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              {
-                step: "01",
-                title: "描述项目",
-                desc: "用自然语言详细描述你的项目想法，AI 会深度理解你的需求。",
-                color: "bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800",
-                textColor: "text-blue-600 dark:text-blue-400",
-              },
-              {
-                step: "02",
-                title: "回答问题",
-                desc: "AI 提出 3-5 个针对性问题，帮助你深入思考项目的关键细节。",
-                color: "bg-purple-50 dark:bg-purple-950/30 border-purple-200 dark:border-purple-800",
-                textColor: "text-purple-600 dark:text-purple-400",
-              },
-              {
-                step: "03",
-                title: "获取文档",
-                desc: "一键生成五类专业文档，支持 Markdown 预览和 ZIP 批量下载。",
-                color: "bg-green-50 dark:bg-green-950/30 border-green-200 dark:border-green-800",
-                textColor: "text-green-600 dark:text-green-400",
-              },
-            ].map(({ step, title, desc, color, textColor }) => (
-              <div key={step} className={`rounded-2xl border p-8 ${color}`}>
-                <span className={`text-5xl font-black ${textColor} opacity-30`}>{step}</span>
-                <h3 className="text-xl font-bold mt-4 mb-2">{title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
+            <div className="rounded-2xl border p-8 bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800">
+              <StepIllustrationDescribe />
+              <span className="text-5xl font-black text-blue-600 dark:text-blue-400 opacity-30">01</span>
+              <h3 className="text-xl font-bold mt-4 mb-2">描述项目</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">用自然语言详细描述你的项目想法，AI 会深度理解你的需求。</p>
+            </div>
+            <div className="rounded-2xl border p-8 bg-purple-50 dark:bg-purple-950/30 border-purple-200 dark:border-purple-800">
+              <StepIllustrationQA />
+              <span className="text-5xl font-black text-purple-600 dark:text-purple-400 opacity-30">02</span>
+              <h3 className="text-xl font-bold mt-4 mb-2">回答问题</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">AI 提出 3-5 个针对性问题，帮助你深入思考项目的关键细节。</p>
+            </div>
+            <div className="rounded-2xl border p-8 bg-green-50 dark:bg-green-950/30 border-green-200 dark:border-green-800">
+              <StepIllustrationDocs />
+              <span className="text-5xl font-black text-green-600 dark:text-green-400 opacity-30">03</span>
+              <h3 className="text-xl font-bold mt-4 mb-2">获取文档</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">一键生成五类专业文档，支持 Markdown 预览和 ZIP 批量下载。</p>
+            </div>
           </div>
         </div>
       </section>
