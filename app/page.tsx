@@ -70,13 +70,13 @@ export default function HomePage() {
 
           {/* 大标题 — 居中层叠排版 */}
           <h1 className="font-black tracking-tight leading-none mb-8">
-            <span className="block text-3xl md:text-4xl text-muted-foreground/60 font-semibold mb-3">
-              把你的想法
+            <span className="block text-3xl md:text-4xl text-slate-300 font-semibold mb-3">
+              把你的想法变成
             </span>
             <span className="block text-7xl md:text-8xl lg:text-[108px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-300 to-fuchsia-400 pb-2">
               专业文档
             </span>
-            <span className="block text-2xl md:text-3xl text-muted-foreground/70 font-medium mt-4 tracking-widest">
+            <span className="block text-2xl md:text-3xl text-slate-300 font-medium mt-4 tracking-widest">
               — 只需三步 —
             </span>
           </h1>
