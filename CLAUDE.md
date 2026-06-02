@@ -43,3 +43,10 @@ This is a Next.js App Router project with Supabase for authentication. Session m
 **Auth flow:** sign-up sends a confirmation email; the link hits `/auth/confirm` which calls `verifyOtp` and redirects. Login uses `signInWithPassword` and redirects to `/protected`. Password reset uses `resetPasswordForEmail` then `updateUser`.
 
 **UI components** live in `components/ui/` (shadcn/ui primitives) and `components/` (feature-level). Styling is Tailwind CSS with `cn()` from `lib/utils.ts` for conditional class merging. Dark/light theming is provided by `next-themes` with a `ThemeSwitcher` component.
+
+## 新用户注册赠送点数
+
+数据库中已配置触发器 `on_auth_user_created`：
+- 每个新注册用户自动获得 **1 点数**（免费试用一次文档生成）
+- 触发器函数：`public.handle_new_user()`
+- 绑定在 `auth.users` 表的 INSERT 事件上
