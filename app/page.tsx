@@ -43,58 +43,76 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero — 动态背景光球 + 浮动插图 + 发光按钮 */}
-      <section className="relative overflow-hidden pt-20 pb-16">
-        {/* Animated color blobs */}
-        <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-violet-200 dark:bg-violet-900 rounded-full filter blur-3xl opacity-30 animate-blob pointer-events-none" />
-        <div className="absolute top-40 -left-24 w-96 h-96 bg-blue-200 dark:bg-blue-900 rounded-full filter blur-3xl opacity-25 animate-blob animation-delay-2000 pointer-events-none" />
-        <div className="absolute bottom-0 left-1/2 w-80 h-80 bg-pink-200 dark:bg-pink-900 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-4000 pointer-events-none" />
+      {/* Hero — 全屏居中，球体背景遮挡 */}
+      <section className="relative min-h-[96vh] flex flex-col items-center justify-center overflow-hidden">
 
-        <div className="relative max-w-6xl mx-auto px-5">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <div className="shimmer-badge inline-flex items-center gap-2 rounded-full bg-indigo-100 dark:bg-indigo-900/40 px-4 py-1.5 text-sm text-indigo-600 dark:text-indigo-400 font-medium mb-6">
-                <Zap className="h-3.5 w-3.5" />
-                AI 驱动的开发文档生成
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                把想法变成
-                <span className="text-primary"> 专业文档</span>
-                <br />只需三步
-              </h1>
-              <p className="text-xl text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0">
-                VibeGuide 帮助编程新手通过 AI 快速生成完整的项目开发文档，
-                从用户旅程地图到数据库设计，10 分钟内一键搞定。
-              </p>
-              <div className="flex items-center justify-center lg:justify-start gap-4">
-                <span className="glow-btn">
-                  <HomeCTAButton />
-                </span>
-                <Button asChild variant="outline" size="lg" className="text-base px-8">
-                  <Link href="/pricing">查看定价</Link>
-                </Button>
-              </div>
-            </div>
-            <div className="hidden lg:flex items-center justify-center">
-              <AnimatedSphere />
-            </div>
-          </div>
+        {/* 背景气泡 */}
+        <div className="absolute -top-32 -right-32 w-[640px] h-[640px] bg-violet-950 rounded-full filter blur-3xl opacity-35 animate-blob pointer-events-none" />
+        <div className="absolute -bottom-20 -left-20 w-[480px] h-[480px] bg-indigo-950 rounded-full filter blur-3xl opacity-25 animate-blob animation-delay-2000 pointer-events-none" />
+        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-fuchsia-950 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-4000 pointer-events-none" />
+
+        {/* 球体 — 放大居中，在文字后方 */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[52%] scale-[2.4] opacity-70 pointer-events-none">
+          <AnimatedSphere />
         </div>
-      </section>
 
-      {/* Stats */}
-      <section className="border-y bg-muted/30">
-        <div className="max-w-6xl mx-auto px-5 py-12 grid grid-cols-3 gap-8 text-center">
-          {[
-            { number: "5", label: "类专业文档" },
-            { number: "3", label: "步骤完成分析" },
-            { number: "10min", label: "生成全套文档" },
-          ].map((stat) => (
-            <div key={stat.label} className="stat-item">
-              <p className="text-4xl font-bold text-primary">{stat.number}</p>
-              <p className="text-muted-foreground text-sm mt-1">{stat.label}</p>
-            </div>
-          ))}
+        {/* 渐变遮罩：顶部和底部与背景融合 */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent via-50% to-background pointer-events-none z-[1]" />
+
+        {/* 主内容 */}
+        <div className="relative z-10 text-center px-5 max-w-5xl mx-auto">
+
+          {/* 徽章 */}
+          <div className="shimmer-badge inline-flex items-center gap-2 rounded-full border border-indigo-700/40 bg-indigo-950/50 backdrop-blur-sm px-5 py-2 text-sm text-indigo-300 font-medium mb-10">
+            <Zap className="h-3.5 w-3.5" />
+            AI 驱动的开发文档生成
+          </div>
+
+          {/* 大标题 — 居中层叠排版 */}
+          <h1 className="font-black tracking-tight leading-none mb-8">
+            <span className="block text-3xl md:text-4xl text-muted-foreground/60 font-semibold mb-3">
+              把你的想法
+            </span>
+            <span className="block text-7xl md:text-8xl lg:text-[108px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-300 to-fuchsia-400 pb-2">
+              专业文档
+            </span>
+            <span className="block text-2xl md:text-3xl text-muted-foreground/70 font-medium mt-4 tracking-widest">
+              — 只需三步 —
+            </span>
+          </h1>
+
+          {/* 副标题 */}
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed">
+            VibeGuide 帮助编程新手通过 AI 快速生成完整的项目开发文档，
+            从用户旅程地图到数据库设计，10 分钟内一键搞定。
+          </p>
+
+          {/* 按钮 */}
+          <div className="flex items-center justify-center gap-4 mb-20">
+            <span className="glow-btn">
+              <HomeCTAButton />
+            </span>
+            <Button asChild variant="outline" size="lg" className="text-base px-8 backdrop-blur-sm border-white/10 hover:border-white/20">
+              <Link href="/pricing">查看定价</Link>
+            </Button>
+          </div>
+
+          {/* Stats — 玻璃卡片，遮挡在球体和下方区块的交界处 */}
+          <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+            {[
+              { number: "5",     label: "类专业文档" },
+              { number: "3",     label: "步骤完成分析" },
+              { number: "10min", label: "生成全套文档" },
+            ].map((stat, i) => (
+              <div
+                key={stat.label}
+                className="stat-item rounded-2xl border border-white/8 bg-white/5 backdrop-blur-md p-5 text-center"
+              >
+                <p className="text-3xl font-bold text-indigo-400">{stat.number}</p>
+                <p className="text-muted-foreground text-xs mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
