@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { HomeCTAButton } from "@/components/home-cta-button";
-import { HeroIllustration } from "@/components/illustrations/hero-illustration";
+import { AnimatedSphere } from "@/components/illustrations/animated-sphere";
 import {
   StepIllustrationDescribe,
   StepIllustrationQA,
@@ -75,8 +75,8 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
-            <div className="hidden lg:flex items-center justify-center animate-float">
-              <HeroIllustration />
+            <div className="hidden lg:flex items-center justify-center">
+              <AnimatedSphere />
             </div>
           </div>
         </div>

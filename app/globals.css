@@ -31,25 +31,25 @@
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 0 0% 2%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 96%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 70%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -169,6 +169,51 @@
 /* FAQ item hover */
 .faq-item { transition: box-shadow 0.2s ease; }
 .faq-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+/* =============================================
+   Animated Sphere
+   ============================================= */
+
+/* Main bounce */
+@keyframes sphere-bounce {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-24px); }
+}
+.sphere-bounce { animation: sphere-bounce 3.2s ease-in-out infinite; }
+
+/* Outer glow pulse */
+@keyframes sphere-glow-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 0.9; transform: scale(1.06); }
+}
+
+/* Concentric ring pulse */
+@keyframes ring-pulse {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.05); }
+}
+
+/* Orbital ring spin (3D tilt) */
+@keyframes orbit-spin {
+  from { transform: rotateX(72deg) rotateZ(0deg); }
+  to   { transform: rotateX(72deg) rotateZ(360deg); }
+}
+
+/* Particle orbital paths */
+@keyframes p-orbit-1 { from { transform: rotate(0deg);    } to { transform: rotate(360deg); } }
+@keyframes p-orbit-2 { from { transform: rotate(120deg);  } to { transform: rotate(480deg); } }
+@keyframes p-orbit-3 { from { transform: rotate(240deg);  } to { transform: rotate(600deg); } }
+@keyframes p-orbit-4 { from { transform: rotate(300deg);  } to { transform: rotate(660deg); } }
+
+/* Surface shimmer across sphere */
+@keyframes sphere-shimmer {
+  0%   { opacity: 0; transform: rotate(-30deg) translateX(-60px); }
+  30%  { opacity: 0.4; }
+  60%  { opacity: 0.15; }
+  100% { opacity: 0; transform: rotate(-30deg) translateX(60px); }
+}
+.sphere-shimmer-line { animation: sphere-shimmer 4s ease-in-out infinite; }
+.sphere-shimmer-line-2 { animation: sphere-shimmer 4s ease-in-out infinite; animation-delay: -2s; }
 
 /* Stat number entrance */
 @keyframes stat-in {
