@@ -1,109 +1,183 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+<div align="center">
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+# ⚡ VibeGuide
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+**AI 驱动的开发文档生成平台**
 
-## Features
+把项目想法变成专业文档，只需三步
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Proxy
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+[![Next.js](https://img.shields.io/badge/Next.js_16-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)](https://supabase.com)
+[![DeepSeek](https://img.shields.io/badge/DeepSeek_AI-4D6BFE?style=flat-square)](https://www.deepseek.com)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 
-## Demo
+</div>
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+---
 
-## Deploy to Vercel
+## 什么是 VibeGuide？
 
-Vercel deployment will guide you through creating a Supabase account and project.
+VibeGuide 帮助**编程新手和独立开发者**在动手写代码之前，通过 AI 快速生成一套完整的项目开发文档。
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+很多人有好的项目想法，却不知道如何把它梳理成可执行的技术方案。VibeGuide 通过三步对话，让 AI 深度理解你的需求，一键生成专业级别的文档，让你的想法真正落地。
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+## 核心功能
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+### 三步生成全套文档
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+| 步骤 | 说明 |
+|------|------|
+| **① 描述项目** | 用自然语言描述你的项目想法（至少 20 字） |
+| **② 回答问题** | AI 提出 3-5 个针对性问题，深挖关键细节 |
+| **③ 获取文档** | 一键并行生成 5 类专业文档 |
 
-## Clone and run locally
+### 生成的 5 类文档
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+- 🗺️ **用户旅程地图** — 用户角色、使用场景、关键触点、痛点与机会点
+- 📋 **产品需求 PRD** — 功能列表、验收标准、非功能性需求
+- 🎨 **前端设计文档** — 技术选型、页面结构、组件设计、路由规划
+- ⚙️ **后端设计文档** — API 接口设计、系统架构、认证方案
+- 🗄️ **数据库设计** — 表结构、ER 图描述、索引设计
 
-2. Create a Next.js app using the Supabase Starter template npx command
+### 其他特性
 
-   ```bash
-   npx create-next-app --example with-supabase with-supabase-app
-   ```
+- Markdown 原文 / HTML 预览双模式
+- 单文档下载 `.md` + 一键打包 `.zip`
+- 项目保存与历史回顾
+- 新用户注册赠送 1 点数免费体验
+- 支付宝付款，点数永久有效
 
-   ```bash
-   yarn create next-app --example with-supabase with-supabase-app
-   ```
+## 技术栈
 
-   ```bash
-   pnpm create next-app --example with-supabase with-supabase-app
-   ```
+| 层级 | 技术 |
+|------|------|
+| 框架 | Next.js 16 (App Router + Turbopack) |
+| 认证 & 数据库 | Supabase (Auth + PostgreSQL) |
+| ORM | Drizzle ORM |
+| AI | DeepSeek API (`deepseek-chat`) |
+| 支付 | ZPay（支付宝） |
+| UI | shadcn/ui + Tailwind CSS |
+| 语言 | TypeScript |
 
-3. Use `cd` to change into the app's directory
+## 本地开发
 
-   ```bash
-   cd with-supabase-app
-   ```
+### 前置条件
 
-4. Rename `.env.example` to `.env.local` and update the following:
+- Node.js 18+
+- pnpm（或 npm / yarn）
+- [Supabase](https://supabase.com) 项目（免费）
+- [DeepSeek](https://platform.deepseek.com) API Key
 
-  ```env
-  NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=[INSERT SUPABASE PROJECT API PUBLISHABLE OR ANON KEY]
-  ```
-  > [!NOTE]
-  > This example uses `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, which refers to Supabase's new **publishable** key format.
-  > Both legacy **anon** keys and new **publishable** keys can be used with this variable name during the transition period. Supabase's dashboard may show `NEXT_PUBLIC_SUPABASE_ANON_KEY`; its value can be used in this example.
-  > See the [full announcement](https://github.com/orgs/supabase/discussions/29260) for more information.
+### 快速开始
 
-  Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
+**1. 克隆仓库**
 
-5. You can now run the Next.js local development server:
+```bash
+git clone https://github.com/hippooos/with-supabase-app.git
+cd with-supabase-app
+```
 
-   ```bash
-   npm run dev
-   ```
+**2. 安装依赖**
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+```bash
+npm install
+```
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+**3. 配置环境变量**
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+复制示例文件并填入你的配置：
 
-## Feedback and issues
+```bash
+cp .env.example .env.local
+```
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+编辑 `.env.local`：
 
-## More Supabase examples
+```env
+# Supabase（在 Supabase 控制台 Settings > API 获取）
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+# 数据库连接
+DATABASE_URL=postgresql://...
+DIRECT_DATABASE_URL=postgresql://...
+
+# DeepSeek AI（在 platform.deepseek.com 获取）
+DEEPSEEK_API_KEY=sk-...
+
+# ZPay 支付（可选，用于生产环境）
+ZPAY_API_KEY=your-api-key
+ZPAY_SECRET_KEY=your-secret-key
+
+# 站点地址
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
+**4. 推送数据库结构**
+
+```bash
+npx drizzle-kit push
+```
+
+**5. 创建新用户赠送点数触发器**
+
+在 Supabase SQL Editor 执行：
+
+```sql
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO public.user_credits (user_id, credits)
+  VALUES (NEW.id, 1)
+  ON CONFLICT (user_id) DO NOTHING;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
+```
+
+**6. 启动开发服务器**
+
+```bash
+npx next dev
+```
+
+访问 [http://localhost:3000](http://localhost:3000)
+
+## 数据库结构
+
+```
+user_credits        — 用户点数（userId, credits）
+payment_records     — 支付记录（userId, outTradeNo, amount, status...）
+projects            — 项目数据（userId, title, description, questions, documents, status）
+```
+
+## 路由结构
+
+```
+/                   落地页
+/pricing            定价页
+/auth/*             登录 / 注册 / 找回密码
+/projects           我的项目（需登录）
+/projects/new       新建项目（需登录）
+/projects/:id       项目详情（需登录）
+/my                 账号与点数（需登录）
+```
+
+## 定价
+
+| 套餐 | 价格 | 点数 |
+|------|------|------|
+| 免费体验 | 注册即送 | 1 点 |
+| 基础包 | ¥20 | 10 点 |
+| 标准包 | ¥40 | 30 点 |
+
+每 1 点数可生成一套完整的项目文档（5 类）。
+
+## License
+
+MIT
