@@ -141,12 +141,11 @@ CREATE TRIGGER on_auth_user_created
 ```
 
 **6. 启动开发服务器**
+# VibeGuide
 
-```bash
-npx next dev
-```
+🌐 [点击访问 VibeGuide 在线网站](https://vvibeguide.netlify.app/)
 
-访问 [http://localhost:3000](http://localhost:3000)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/08494373-d8f8-4c62-8a61-a666d8d1cec8/deploy-status)](https://vvibeguide.netlify.app/)
 
 ## 数据库结构
 
