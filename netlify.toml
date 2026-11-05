@@ -1,0 +1,3 @@
+[build.environment]
+  # APP_MODE is a non-sensitive mode flag that matches common build output.
+  SECRETS_SCAN_OMIT_KEYS = "APP_MODE"
