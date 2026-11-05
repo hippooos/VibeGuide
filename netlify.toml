@@ -1,0 +1,4 @@
+[build.environment]
+  # APP_MODE is a non-sensitive deployment selector. Its value can also
+  # occur in ordinary repository files and generated framework output.
+  SECRETS_SCAN_OMIT_KEYS = "APP_MODE"
