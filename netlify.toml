@@ -1,0 +1,4 @@
+[build.environment]
+  # Token limits are non-sensitive numeric configuration.
+  # Keep secrets scanning enabled for all other environment variables.
+  SECRETS_SCAN_OMIT_KEYS = "LLM_MAX_OUTPUT_TOKENS"
