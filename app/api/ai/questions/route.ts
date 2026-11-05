@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { openai, AI_MODEL } from "@/lib/openai";
+import { getOpenAIClient, AI_MODEL } from "@/lib/openai";
 
 export async function POST(req: NextRequest) {
   const supabase = await createClient();
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const completion = await openai.chat.completions.create({
+  const completion = await getOpenAIClient().chat.completions.create({
     model: AI_MODEL,
     messages: [
       {

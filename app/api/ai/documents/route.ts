@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { openai, AI_MODEL } from "@/lib/openai";
+import { getOpenAIClient, AI_MODEL } from "@/lib/openai";
 import { getCredits, deductCredit } from "@/lib/credits";
 
 interface QAPair {
@@ -9,7 +9,7 @@ interface QAPair {
 }
 
 async function generateDoc(systemPrompt: string, userContext: string): Promise<string> {
-  const completion = await openai.chat.completions.create({
+  const completion = await getOpenAIClient().chat.completions.create({
     model: AI_MODEL,
     messages: [
       { role: "system", content: systemPrompt },
