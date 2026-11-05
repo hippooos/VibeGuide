@@ -1,0 +1,4 @@
+[build.environment]
+  # These non-secret settings match ordinary source and generated bundle text.
+  # Keep credential scanning enabled and do not exclude build output paths.
+  SECRETS_SCAN_OMIT_KEYS = "APP_MODE,LLM_BASE_URL,LLM_TIMEOUT_SECONDS"
