@@ -1,0 +1,4 @@
+[build.environment]
+  # APP_MODE is non-sensitive configuration with a common value.
+  # Keep secrets scanning enabled for all other environment variables.
+  SECRETS_SCAN_OMIT_KEYS = "APP_MODE"
