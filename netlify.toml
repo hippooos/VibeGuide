@@ -1,0 +1,3 @@
+[build.environment]
+  # Exclude adapter-generated files from scanning; keep source scanning enabled.
+  SECRETS_SCAN_OMIT_PATHS = ".netlify"
