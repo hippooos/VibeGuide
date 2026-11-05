@@ -103,7 +103,7 @@ export default function HomePage() {
               { number: "5",     label: "类专业文档" },
               { number: "3",     label: "步骤完成分析" },
               { number: "10min", label: "生成全套文档" },
-            ].map((stat, i) => (
+            ].map((stat) => (
               <div
                 key={stat.label}
                 className="stat-item rounded-2xl border border-white/8 bg-white/5 backdrop-blur-md p-5 text-center"
